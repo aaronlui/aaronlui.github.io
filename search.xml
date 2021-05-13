@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>element在el-form只有一个el-input时回车刷新页面</title>
+    <url>/2021/05/13/element%E5%9C%A8el-form%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AAel-input%E6%97%B6%E5%9B%9E%E8%BD%A6%E5%88%B7%E6%96%B0%E9%A1%B5%E9%9D%A2/</url>
+    <content><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>在使用element ui的表单组件时，当表单只有一个输入框并绑定回车事件时，回车没有触发绑定的事件却刷新了页面</p>
+<span id="more"></span>
+
+<h3 id="官方文档解释"><a href="#官方文档解释" class="headerlink" title="官方文档解释"></a>官方文档解释</h3><p>W3C 标准中有如下<a href="https://www.w3.org/MarkUp/html-spec/html-spec_8.html#SEC8.2">规定</a>：</p>
+<blockquote>
+<p><em>When there is only one single-line text input field in a form, the user agent should accept Enter in that field as a request to submit the form.</em></p>
+</blockquote>
+<p>即：当一个 form 元素中只有一个输入框时，在该输入框中按下回车应提交该表单。如果希望阻止这一默认行为，可以在 <code>&lt;el-form&gt;</code> 标签上添加 <code>@submit.native.prevent</code>。</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-form</span> @<span class="attr">submit.native.prevent</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-input</span> @<span class="attr">keyup.native.enter</span>=<span class="string">&quot;submit&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">el-form</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>element</tag>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+</search>
