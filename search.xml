@@ -20,4 +20,20 @@
         <tag>vue</tag>
       </tags>
   </entry>
+  <entry>
+    <title>linux映射网络路径到本地</title>
+    <url>/2021/05/18/linux%E6%98%A0%E5%B0%84%E7%BD%91%E7%BB%9C%E8%B7%AF%E5%BE%84%E5%88%B0%E6%9C%AC%E5%9C%B0/</url>
+    <content><![CDATA[<p>映射smb协议局域网路径到本地，之后就可以使用本地路径向网络路径传输文件</p>
+<span id="more"></span>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo mount -t cifs -o username=用户名,password=密码 网络路径 本地路径</span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo mount -t cifs -o username=aaron,password=123456 //192.168.1.1/documents /home/aaron/documents</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
 </search>
