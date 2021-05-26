@@ -36,4 +36,37 @@
         <tag>linux</tag>
       </tags>
   </entry>
+  <entry>
+    <title>解决big sur在安装xcode后启动终端会卡几秒的问题</title>
+    <url>/2021/05/26/%E8%A7%A3%E5%86%B3big-sur%E5%9C%A8%E5%AE%89%E8%A3%85xcode%E5%90%8E%E5%90%AF%E5%8A%A8%E7%BB%88%E7%AB%AF%E4%BC%9A%E5%8D%A1%E5%87%A0%E7%A7%92%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>之前开发者工具一直使用的是CommandLineTools，后来安装了xcode后，被替换成了xcode，结果每次开机第一次运行终端都会卡在xcodebuild上好几秒，且直接运行vscode会提示错误</p>
+<span id="more"></span>
+
+<ol>
+<li>终端输入<code>xcode-select -p</code>查看开发者工具当前路径</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">xcode-select -p</span><br></pre></td></tr></table></figure>
+
+<p>此时显示为xcode开发者工具的路径</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/Applications/Xcode.app/Contents/Developer</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>安装CommandLineTools，如已安装过可跳过</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">xcode-select --install</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>将开发者工具由xcode改为CommandLineTools</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo xcode-select -switch /Library/Developer/CommandLineTools</span><br></pre></td></tr></table></figure>
+
+<p>现在第一次启动终端不会再卡几秒钟，问题解决！</p>
+]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>mac</tag>
+      </tags>
+  </entry>
 </search>
